@@ -1,0 +1,139 @@
+.dashboardContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  padding-top: 8vh;
+}
+
+.dashboardMainContainer {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dashboardMainContainer h1 {
+  font-size: 3rem;
+  color: #238E06;
+  margin: 0;
+}
+
+.dashboardSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.dashboardSearch input {
+  width: 50%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #238E06;
+  border-radius: 8px;
+  font-size: 1.25rem;
+}
+
+.dashboardSearch button {
+  padding: 0.8rem 1.5rem;
+  background-color: #238E06;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dashboardSearch button:hover {
+  background-color: #145704;
+  transform: scale(1.05);
+}
+
+.dashboardData {
+  width: 100%;
+  text-align: center;
+}
+
+.dashboardData h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.dashboardDataCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 0 0 1.2px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  border-radius: 5px;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.dashboardDataCard div {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 60%;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboardDataCard div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dashboardDataCard h2 {
+  font-size: 2rem;
+  color: #238E06;
+  margin-bottom: 0.5rem;
+}
+
+.dashboardDataCard p {
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.dashboardDataCard button {
+  padding: 0.5rem 1rem;
+  background-color: #238E06;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dashboardDataCard button:hover {
+  background-color: #145704;
+  transform: scale(1.05);
+}
+
+.dashboardMap {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dashboardMap h2 {
+  font-size: 2rem;
+  color: #238E06;
+  margin: 0;
+}

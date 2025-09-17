@@ -17,7 +17,7 @@
 }
 
 .dashboardMainContainer h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #238E06;
   margin: 0;
 }
@@ -35,7 +35,7 @@
   padding: 0.8rem 1rem;
   border: 2px solid #238E06;
   border-radius: 8px;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .dashboardSearch button {
@@ -44,7 +44,7 @@
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -61,7 +61,7 @@
 }
 
 .dashboardData h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #333;
   margin-bottom: 1.5rem;
 }
@@ -94,7 +94,7 @@
 }
 
 .dashboardDataCard h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #238E06;
   margin-bottom: 0.5rem;
 }
@@ -102,11 +102,11 @@
 .dashboardDataCard p {
   color: #555;
   margin-bottom: 1.5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .dashboardDataCard button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   background-color: #238E06;
   color: white;
   border: none;
@@ -133,7 +133,7 @@
 }
 
 .dashboardMap h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #238E06;
   margin: 0;
 }

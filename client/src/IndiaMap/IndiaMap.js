@@ -1,32 +1,50 @@
-import React, { useEffect, useRef } from "react";
-import maplibregl from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
+import React, { useEffect, useState } from "react";
+import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import config from "../config"
+
+const API_URL =config.API_URL ;
 
 const IndiaMap = () => {
-  const mapContainer = useRef(null);
-  const mapInstance = useRef(null);
-  const API_KEY = process.env.REACT_APP_MAPTILER_API_KEY;
+  const [geojson, setGeojson] = useState(null);
 
   useEffect(() => {
-    if (!mapContainer.current) return; 
-    if (mapInstance.current) return;  
+    fetch(`${API_URL}/mandals_all`)
+      .then((res) => res.json())
+      .then((data) => {
+        setGeojson(data); // 👈 use directly
+      })
+      .catch((err) => console.error("Error fetching mandals:", err));
+  }, []);
 
-    mapInstance.current = new maplibregl.Map({
-      container: mapContainer.current,
-      style: "https://demotiles.maplibre.org/style.json",
-      center: [79.2088, 17.1232], 
-      zoom: 6,                     
-    });
+  const styleFeature = (feature) => ({
+    color: feature.properties.type === "mandal" ? "red" : "blue",
+    weight: 2,
+    fillOpacity: 0.2,
+  });
 
-    mapInstance.current.addControl(new maplibregl.NavigationControl(), "top-right");
+  const onEachFeature = (feature, layer) => {
+    const { name, type } = feature.properties;
+    layer.bindPopup(`<b>${name}</b><br/>Type: ${type}`);
+  };
 
-    return () => {
-      mapInstance.current?.remove();
-      mapInstance.current = null;
-    };
-  }, [API_KEY]);
+  return (
+    <MapContainer
+      center={[19.2, 79.2]}
+      zoom={7}
+      style={{ width: "100%", height: "100vh" }}
+      scrollWheelZoom={true}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+      />
 
-  return <div ref={mapContainer} style={{ width: "100%", height: "100vh" }} />;
+      {geojson && (
+        <GeoJSON data={geojson} style={styleFeature} onEachFeature={onEachFeature} />
+      )}
+    </MapContainer>
+  );
 };
 
 export default IndiaMap;
